@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "569472001001",
+    "firebase_url": "https://apia2-users-test.firebaseio.com",
+    "project_id": "apia2-users-test",
+    "storage_bucket": "apia2-users-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569472001001:android:e16c39183d3aaa50",
+        "android_client_info": {
+          "package_name": "com.rakangsoftware.users"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569472001001-diglloh7u2h8o9qp5ncklat7i375i5a2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rakangsoftware.users",
+            "certificate_hash": "d4845037068b6f112c8b33b2f2dad9a39f3ff26b"
+          }
+        },
+        {
+          "client_id": "569472001001-rthcfu7aro0ojh6qb62m4kkbh93db3su.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlkwIRs3XcV7cr3oF5Q0W6KWex0lSN94E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569472001001-rthcfu7aro0ojh6qb62m4kkbh93db3su.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
