@@ -26,6 +26,13 @@ class UsersActivity : AppCompatActivity() {
         binding.setLifecycleOwner(this)
         binding.executePendingBindings()
 
+        viewModel.usersLiveData.observe(this, object : Observer<List<User>> {
+            override fun onChanged(t: List<User>?) {
+                t?.let {
+                    println("Users: ${t.size}")
+                }
+            }
+        })
         val adapter = UserAdapter(viewModel)
 
         user_list.layoutManager = LinearLayoutManager(this)
