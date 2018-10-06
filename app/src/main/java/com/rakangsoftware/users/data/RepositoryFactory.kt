@@ -14,7 +14,6 @@ class RepositoryFactory {
         @Synchronized
         fun getUserRepository(context: Context): UserRepository {
             if (sUserRepository == null) {
-//                sUserRepository = UserRepositoryDB(AppDatabase.getInstance(context)?.userDao!!)
                 sUserRepository = UserRepositoryFB()
             }
             return sUserRepository as UserRepository
