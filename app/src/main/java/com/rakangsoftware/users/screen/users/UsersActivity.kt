@@ -15,6 +15,15 @@ import com.rakangsoftware.users.R
 import com.rakangsoftware.users.data.user.User
 import com.rakangsoftware.users.databinding.UsersActivityBinding
 import kotlinx.android.synthetic.main.users_activity.*
+import android.view.ViewGroup
+import com.crashlytics.android.Crashlytics
+import android.databinding.adapters.TextViewBindingAdapter.setText
+import android.view.View
+import android.widget.Button
+import io.fabric.sdk.android.Fabric
+
+
+
 
 class UsersActivity : AppCompatActivity() {
 
@@ -41,6 +50,26 @@ class UsersActivity : AppCompatActivity() {
                 showCreateDialog(viewModel)
             }
         })
+
+        val fabric = Fabric.Builder(this)
+                .kits(Crashlytics())
+                .debuggable(true)  // Enables Crashlytics debugger
+                .build()
+        Fabric.with(fabric)
+
+//        For testing the crash uncomment this and in AndroidManifest.xml
+
+//        val crashButton = Button(this)
+//        crashButton.setText("Crash!")
+//        crashButton.setOnClickListener(object : View.OnClickListener {
+//            override fun onClick(view: View) {
+//                Crashlytics.getInstance().crash() // Force a crash
+//            }
+//        })
+//
+//        addContentView(crashButton, ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT))
     }
 
     private fun showCreateDialog(viewModel: UsersViewModel) {
