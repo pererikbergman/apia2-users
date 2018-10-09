@@ -10,6 +10,7 @@ import android.support.design.widget.TextInputEditText
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.rakangsoftware.users.R
 import com.rakangsoftware.users.data.user.User
 import com.rakangsoftware.users.databinding.UsersActivityBinding
@@ -17,8 +18,12 @@ import kotlinx.android.synthetic.main.users_activity.*
 
 class UsersActivity : AppCompatActivity() {
 
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        firebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         val viewModel = ViewModelProviders.of(this, UsersViewModelFactory(this)).get(UsersViewModel::class.java)
         val binding: UsersActivityBinding = DataBindingUtil.setContentView(this, R.layout.users_activity)
@@ -50,6 +55,12 @@ class UsersActivity : AppCompatActivity() {
 
         builder.setPositiveButton(android.R.string.ok) { _, _ ->
             viewModel.createUser(User(firstNameView.text.toString(), lastNameView.text.toString()))
+
+            val bundle = Bundle()
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, firstNameView.text.toString())
+            bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "user")
+            firebaseAnalytics.logEvent("create_user", bundle)
+
         }
 
         builder.show()
