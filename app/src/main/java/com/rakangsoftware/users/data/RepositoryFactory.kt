@@ -2,8 +2,7 @@ package com.rakangsoftware.users.data
 
 import android.content.Context
 import com.rakangsoftware.users.data.user.UserRepository
-import com.rakangsoftware.users.data.user.UserRepositoryDB
-import com.rakangsoftware.users.data.user.UserRepositoryFB
+import com.rakangsoftware.users.data.user.firestore.UserRepositoryFS
 
 class RepositoryFactory {
     companion object {
@@ -14,7 +13,7 @@ class RepositoryFactory {
         @Synchronized
         fun getUserRepository(context: Context): UserRepository {
             if (sUserRepository == null) {
-                sUserRepository = UserRepositoryFB()
+                sUserRepository = UserRepositoryFS()
             }
             return sUserRepository as UserRepository
         }

@@ -1,8 +1,10 @@
-package com.rakangsoftware.users.data.user
+package com.rakangsoftware.users.data.user.realtime
 
 import android.arch.lifecycle.LiveData
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.rakangsoftware.users.data.user.User
+import com.rakangsoftware.users.data.user.UserRepository
 
 class UserRepositoryFB : UserRepository {
 

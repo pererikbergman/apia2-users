@@ -5,7 +5,7 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import com.rakangsoftware.users.data.user.User
-import com.rakangsoftware.users.data.user.UserDao
+import com.rakangsoftware.users.data.user.room.UserDao
 
 @Database(entities = arrayOf(User::class), version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

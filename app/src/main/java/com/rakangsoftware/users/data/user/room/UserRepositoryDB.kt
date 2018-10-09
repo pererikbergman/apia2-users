@@ -1,6 +1,8 @@
-package com.rakangsoftware.users.data.user
+package com.rakangsoftware.users.data.user.room
 
 import android.arch.lifecycle.LiveData
+import com.rakangsoftware.users.data.user.User
+import com.rakangsoftware.users.data.user.UserRepository
 import com.rakangsoftware.users.utils.IO
 
 class UserRepositoryDB(var userDao: UserDao) : UserRepository {
